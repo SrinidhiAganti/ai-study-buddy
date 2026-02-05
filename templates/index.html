@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Buddy</title>
+</head>
+<body>
+
+<h2>AI Study Buddy</h2>
+
+<form method="post">
+<textarea name="text" rows="6" cols="50" placeholder="Enter study text"></textarea><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<h3>Answer</h3>
+<p>{{answer}}</p>
+
+<h3>Summary</h3>
+<p>{{summary}}</p>
+
+<h3>MCQs</h3>
+{% for m in mcqs %}
+<p>{{m.q}}</p>
+<ul>
+{% for o in m.options %}
+<li>{{o}}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+</body>
+</html>
